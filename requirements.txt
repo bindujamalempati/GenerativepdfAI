@@ -1,8 +1,8 @@
-streamlit
 langchain
+langchain-community
 PyMuPDF
-openai
-faiss-cpu
+streamlit
 python-dotenv
+faiss-cpu
 sentence-transformers
 transformers

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 langchain
+=======
+streamlit
+>>>>>>> 09a91cef5bf024e66a484521214adc4f1e45604d
 langchain-community
 PyMuPDF
 streamlit

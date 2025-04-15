@@ -6,14 +6,14 @@ from langchain_community.document_loaders import PyMuPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.vectorstores import FAISS
-from openai import OpenAI
+import openai
 import tempfile
 from datetime import datetime
 import base64
 
 # --- Load environment variables ---
 load_dotenv()
-api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # --- Configure Streamlit page ---
 st.set_page_config(page_title="AskMyDoc", layout="wide", page_icon="📄")
@@ -149,7 +149,6 @@ if pdf_files:
         context = "\n\n".join([doc.page_content for doc in docs])
 
         with st.spinner("🤖 Thinking..."):
-            # Show animated CSS loader manually
             spinner_html = """
             <div class="spinner-wrapper">
                 <div class="loader"></div>
@@ -158,15 +157,13 @@ if pdf_files:
             spinner_placeholder = st.empty()
             spinner_placeholder.markdown(spinner_html, unsafe_allow_html=True)
 
-            client = OpenAI(api_key=api_key)
-            response = client.chat.completions.create(
+            response = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo",
                 messages=[
                     {"role": "system", "content": "Answer using the provided context only."},
                     {"role": "user", "content": f"Context:\n{context}\n\nQuestion: {question}"}
                 ]
             )
-
             spinner_placeholder.empty()
 
         answer = response.choices[0].message.content

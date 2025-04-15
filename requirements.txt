@@ -6,3 +6,4 @@ PyMuPDF
 python-dotenv
 sentence-transformers
 transformers
+openai

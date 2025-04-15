@@ -1,8 +1,8 @@
 langchain
 langchain-community
-PyMuPDF
-streamlit
-python-dotenv
 faiss-cpu
+streamlit
+PyMuPDF
+python-dotenv
 sentence-transformers
 transformers

@@ -1,6 +1,6 @@
-# 📄 AskMyDoc
+# 📄 GenerativepdfAI
 
-**AskMyDoc** is an intelligent PDF Question-Answering web app built using `Streamlit`, enabling users to upload one or multiple PDF files, ask natural language questions, and receive precise answers powered by `OpenAI` and `LangChain`.
+**GenerativepdfAI** is an intelligent PDF Question-Answering web app built using `Streamlit`, enabling users to upload one or multiple PDF files, ask natural language questions, and receive precise answers powered by `OpenAI` and `LangChain`.
 
 ---
 
@@ -32,6 +32,6 @@
 | **Environment**     | `.env` with `python-dotenv`                                                       |
 | **Containerization**| Docker (local usage optional)                                                     |
 | **Version Control** | Git, GitHub                                                                        |
-| **Deployment**      | Streamlit Cloud ([Live App](https://askmydoc2.streamlit.app))                     |
+| **Deployment**      | Streamlit Cloud ([Live App](https://GenerativepdfAI2.streamlit.app))                     |
 
 ---

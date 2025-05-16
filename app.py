@@ -16,7 +16,7 @@ load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # --- Configure Streamlit page ---
-st.set_page_config(page_title="AskMyDoc", layout="wide", page_icon="📄")
+st.set_page_config(page_title="GenerativepdfAI", layout="wide", page_icon="📄")
 
 # --- Inject animated loading spinner CSS ---
 st.markdown("""
@@ -49,7 +49,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- Load Logo ---
-logo_path = r"C:\\Users\\nisse\\Desktop\\askmydoc_logo.png"
+logo_path = r"C:\\Users\\nisse\\Desktop\\GenerativepdfAI_logo.png"
 logo = None
 if os.path.exists(logo_path):
     try:
@@ -61,15 +61,15 @@ if os.path.exists(logo_path):
 with st.sidebar:
     if logo:
         st.image(logo, width=140)
-    st.title("📄 AskMyDoc")
+    st.title("📄 GenerativepdfAI")
     st.markdown("""
-    Welcome to **AskMyDoc** – your intelligent document assistant.
+    Welcome to **GenerativepdfAI** – your intelligent document assistant.
 
     Upload a PDF, ask questions, and get accurate answers instantly.
     """)
     st.markdown("---")
     st.markdown("👤 **Author:** Balaji Nissenkarao")
-    st.markdown("🌐 [GitHub Repo](https://github.com/NBalaji0317/AskMyDoc)")
+    st.markdown("🌐 [GitHub Repo](https://github.com/NBalaji0317/GenerativepdfAI)")
     st.markdown("---")
     feedback = st.text_area("💬 Have feedback or suggestions?", placeholder="Type your thoughts here...")
     if st.button("Submit Feedback"):
@@ -82,7 +82,7 @@ if logo:
 # --- Main Title ---
 st.markdown("""
 <div style='text-align: center; padding: 20px;'>
-    <h1 style='font-size: 40px;'>📚 AskMyDoc</h1>
+    <h1 style='font-size: 40px;'>📚 GenerativepdfAI</h1>
     <p style='font-size: 18px;'>Your AI-powered assistant for instant insights from PDFs</p>
 </div>
 """, unsafe_allow_html=True)
@@ -184,7 +184,7 @@ if pdf_files:
         if st.button("📅 Download Chat Summary"):
             summary_text = "\n\n".join([f"Q: {entry['question']}\nA: {entry['answer']}" for entry in st.session_state.saved_answers])
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            summary_filename = f"AskMyDoc_Chat_{timestamp}.txt"
+            summary_filename = f"GenerativepdfAI_Chat_{timestamp}.txt"
             with open(summary_filename, "w", encoding="utf-8") as f:
                 f.write(summary_text)
             with open(summary_filename, "rb") as f:
@@ -194,6 +194,6 @@ if pdf_files:
 st.markdown("""
 ---
 <div style='text-align: center;'>
-    <small>Built with ❤️ by Balaji Nissenkarao | <a href='https://github.com/NBalaji0317/AskMyDoc' target='_blank'>GitHub</a></small>
+    <small>Built with ❤️ by Balaji Nissenkarao | <a href='https://github.com/NBalaji0317/GenerativepdfAI' target='_blank'>GitHub</a></small>
 </div>
 """, unsafe_allow_html=True)

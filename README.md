@@ -1,8 +1,4 @@
----
 
-# 📄 README for **Generative PDF AI**
-
-```md
 # 📚 Generative PDF AI
 
 > AI-powered assistant for interactive PDF exploration — ask questions, summarize content, and search contextually across documents.
